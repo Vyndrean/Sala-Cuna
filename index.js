@@ -4,12 +4,20 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+const userRoutes = require('./routes/userRoutes')
+
+app.use(cors())
+app.use(express.json())
+app.options("*", cors())
+app.use('/api', userRoutes)
+
+
 app.listen(process.env.PORT, () => {
     console.log('Server started and the url is http://localhost:' + process.env.PORT);
 
 });
 
-mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false); 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
