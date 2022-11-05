@@ -7,6 +7,8 @@ const app = express();
 const userRoutes = require('./routes/userRoutes')
 const parvuloRoutes = require('./routes/parvuloRoutes')
 const apoderadosRoutes = require('./routes/apoderadoRoutes')
+const asistenteRoutes = require('./routes/asistenteRoutes')
+const educadorRoutes = require('./routes/educadorRoutes')
 
 app.use(cors())
 app.use(express.json())
@@ -14,6 +16,8 @@ app.options("*", cors())
 app.use('/api', userRoutes)
 app.use('/api', parvuloRoutes)
 app.use('/api', apoderadosRoutes)
+app.use('/api', asistenteRoutes)
+app.use('/api', educadorRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log('Server started and the url is http://localhost:' + process.env.PORT);

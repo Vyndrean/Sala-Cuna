@@ -9,7 +9,7 @@ const ApoderadoSchema = new Schema({
         type: String,
         required: true
     },
-    parvulo:{
+    /*parvulo:{
         relationship:{
             type: String,
             enum: ["Padre","Madre","Tio/a","Hermano/a","Otro"],
@@ -19,7 +19,7 @@ const ApoderadoSchema = new Schema({
             type: Schema.ObjectId,
             ref: "parvulo"
         }
-    },
+    },*/
     phone:{
         type: Number,
         required: true

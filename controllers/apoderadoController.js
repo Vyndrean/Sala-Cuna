@@ -6,7 +6,7 @@ const addApoderado = (req, res) => {
     let newApoderado = new Apoderado;
     newApoderado.name = req.body.name
     newApoderado.rut = req.body.rut
-    newApoderado.parvulo = req.body.idParvulo
+    //newApoderado.parvulo = req.body.idParvulo
     newApoderado.phone = req.body.phone
     newApoderado.birthday = req.body.birthday
     newApoderado.mail = req.body.mail
@@ -41,22 +41,7 @@ const getApoderado = (req, res) => {
 
 const delApoderado = (req, res) => {
     let apoderadoID = req.params.id
-    let name = req.body.name
-    let rut = req.body.rut
-    let parvulo = req.body.parvulo
-    let phone = req.body.phone
-    let birthday = req.body.birthday
-    let mail = req.body.mail
-    let address = req.body.address
-    Apoderado.findByIdAndDelete(apoderadoID, {
-        name: name,
-        rut: rut,
-        parvulo: parvulo,
-        phone: phone,
-        birthday: birthday,
-        mail: mail,
-        address: address
-    }, (err, apoderado) => {
+    Apoderado.findByIdAndDelete(apoderadoID, (err, apoderado) => {
         if(err){
             return res.status(400).send({message: "Error al eliminar el perfil"})
         }
@@ -66,7 +51,22 @@ const delApoderado = (req, res) => {
 
 const modApoderado = (req, res) => {
     let apoderadoID = req.params.id
-    Apoderado.findByIdAndUpdate(apoderadoID, (err, apoderado) => {
+    let name = req.body.name
+    let rut = req.body.rut
+    //let parvulo = req.body.parvulo
+    let phone = req.body.phone
+    let birthday = req.body.birthday
+    let mail = req.body.mail
+    let address = req.body.address
+    Apoderado.findByIdAndUpdate(apoderadoID, {
+        name: name,
+        rut: rut,
+        parvulo: parvulo,
+        phone: phone,
+        birthday: birthday,
+        mail: mail,
+        address: address
+    }, (err, apoderado) => {
         if(err){
             return res.status(400).send({message: "Error al editar el perfil"})
         }
