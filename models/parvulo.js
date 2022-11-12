@@ -21,15 +21,14 @@ const parvuloSchema = new Schema({
         type: String,
         enum: ['H','M'],
         required: true
-    }
-    /*
+    }/*,
     image:{
         type: String
     },
     representative:{
         type: Schema.ObjectId,
         ref: "apoderado"
-    },*/
+    }*/
 })
 
 module.exports = mongoose.model('parvulo', parvuloSchema)

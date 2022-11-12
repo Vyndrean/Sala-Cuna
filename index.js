@@ -9,6 +9,7 @@ const parvuloRoutes = require('./routes/parvuloRoutes')
 const apoderadosRoutes = require('./routes/apoderadoRoutes')
 const asistenteRoutes = require('./routes/asistenteRoutes')
 const educadorRoutes = require('./routes/educadorRoutes')
+const matriculaRoutes = require('./routes/matriculaRoutes')
 
 app.use(cors())
 app.use(express.json())
@@ -18,6 +19,7 @@ app.use('/api', parvuloRoutes)
 app.use('/api', apoderadosRoutes)
 app.use('/api', asistenteRoutes)
 app.use('/api', educadorRoutes)
+app.use('/api', matriculaRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log('Server started and the url is http://localhost:' + process.env.PORT);

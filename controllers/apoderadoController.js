@@ -23,7 +23,7 @@ const addApoderado = (req, res) => {
 const getApoderados = (req, res) => {
     Apoderado.find({}, (err, apoderados) => {
         if(err){
-            return res.status(400).sned({message: "Error al obtener los perfiles"})
+            return res.status(400).send({message: "Error al obtener los perfiles"})
         }
         return res.status(200).send(apoderados)
     })
